@@ -1,5 +1,4 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
-
 let menuItems = [
   'Students',
   'Faculty',
@@ -33,18 +32,29 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+const menuDrop = document.querySelector('.header')
 
-menuItems.forEach(data => {
-    articles.appendChild(createMenu(data))
+menuItems.map(items => {
+    menuDrop.append(createMenu(items))
 })
 
-function createMenu() {
+function createMenu(items) {
     const menu = document.createElement('div')
     const menuList = document.createElement('ul')
     const menuItem = document.createElement('li')
+    const menuButton = document.querySelector('.menu-button')
 
     menu.appendChild(menuList)
     menuList.appendChild(menuItem)
 
     menu.classList.add('menu')
+
+    menuItem.textContent = items
+
+    menuButton.addEventListener('click', event => {
+        menu.classList.toggle('menu--open')
+
+    })
+
+    return menu
 }
