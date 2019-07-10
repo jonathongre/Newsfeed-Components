@@ -34,22 +34,37 @@ let menuItems = [
 */
 const menuDrop = document.querySelector('.header')
 
-menuItems.map(items => {
-    menuDrop.append(createMenu(items))
-})
+menuItems.forEach(items => {
+            menuDrop.append(createMenu(items))
+        })
 
 function createMenu(items) {
     const menu = document.createElement('div')
     const menuList = document.createElement('ul')
-    const menuItem = document.createElement('li')
+    const menuItem1 = document.createElement('li')
+    const menuItem2 = document.createElement('li')
+    const menuItem3 = document.createElement('li')
+    const menuItem4 = document.createElement('li')
+    const menuItem5 = document.createElement('li')
+    const menuItem6 = document.createElement('li')
     const menuButton = document.querySelector('.menu-button')
 
     menu.appendChild(menuList)
-    menuList.appendChild(menuItem)
+    menuList.appendChild(menuItem1)
+    menuList.appendChild(menuItem2)
+    menuList.appendChild(menuItem3)
+    menuList.appendChild(menuItem4)
+    menuList.appendChild(menuItem5)
+    menuList.appendChild(menuItem6)
 
     menu.classList.add('menu')
 
-    menuItem.textContent = items
+    menuItem1.textContent = menuItems[0]
+    menuItem2.textContent = menuItems[1]
+    menuItem3.textContent = menuItems[2]
+    menuItem4.textContent = menuItems[3]
+    menuItem5.textContent = menuItems[4]
+    menuItem6.textContent = menuItems[5]
 
     menuButton.addEventListener('click', event => {
         menu.classList.toggle('menu--open')
